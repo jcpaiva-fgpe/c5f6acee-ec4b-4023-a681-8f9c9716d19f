@@ -1,0 +1,1 @@
+{"id":"a520bd87-0120-4d92-ad89-39f3b8c8f428","name":"Ruly","criteria":{"conditions":[{"order":0,"left_entity":"FIXED","left_property":"o","comparing_function":"LESS_THAN","right_entity":"FIXED","right_property":"y"}],"junctors":["AND"]},"actions":[{"type":"TAKE","parameters":["vvv"]}]}
