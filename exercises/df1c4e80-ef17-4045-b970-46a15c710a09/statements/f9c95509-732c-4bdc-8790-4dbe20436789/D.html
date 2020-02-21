@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>Problema&nbsp;D: Campeonato de telepatia</TITLE>
+<META NAME="description" CONTENT="Problem&nbsp;D: Campeonato de telepatia">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+<!--<script type="text/javascript" 
+       src="../mathjax/2.00/MathJax.js?config=TeX-AMS_CHTML">
+</script>-->
+
+<script type="text/javascript" 
+	src="/MathJax-2.7.3/MathJax.js?config=TeX-MML-AM_CHTML" async>
+</script>
+
+</HEAD>
+
+<BODY >
+
+
+<H1><A NAME="SECTION00040000000000000000">
+Problema&nbsp;D: Campeonato de telepatia</A>
+</H1>
+
+<P>
+
+
+
+
+
+
+<IMG
+ WIDTH="278" HEIGHT="181" BORDER="0"
+ SRC="telepatiaFig.jpg"
+ ALT="imagem telepatiaFig", align = right>
+
+
+
+<P>
+No Campeonato de Telepatia, cada prova envolve um telepata e um leigo,
+escolhido aleatoriamente entre a assistência.
+O leigo pensa numa sequência de números inteiros, 
+com um comprimento pré-acordado e escreve-a.
+O telepata concentra-se nos pensamentos do leigo e
+escreve uma sequência de igual comprimento que,
+idealmente, é exatamente igual à do leigo.
+
+<P>
+A pontuação do telepata depende dos seus ``acertos''.
+Existe um <I>acerto</I> quando o mesmo número 
+ocorre na mesma posição em ambas as sequências.
+Acertos <I>consecutivos</I> são acertos 
+que ocorrem em posições consecutivas das sequências.
+Se as posições imediatamente à esquerda e imediatamente à direita 
+da posição de um acerto não existem ou não são de acerto,
+esse acerto diz-se <I>isolado</I>.
+
+<P>
+A <I>pontuação</I> da prova é calculada da seguinte forma:
+é atribuído 1 ponto por cada acerto isolado e
+são atribuídos 3 pontos por cada acerto consecutivo.
+
+<P>
+Por exemplo, se as sequências escritas pelo leigo e pelo telepata forem,
+respetivamente:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+\(
+ % \begin{displaymath}
+\begin{array}{rrrrrrrrrrrrr}
+1 & 2 & 3 & 5 & 6 & 7 & 4 & 2 & 3 & 6 & 3 & 3 & 4 \\
+2 & 1 & 3 & 5 & 6 & 9 & 4 & 1 & 1 & 1 & 7 & 1 & 4
+\end{array}
+%\end{displaymath}
+\)
+</DIV>
+
+<!-- <IMG -->
+<!--  WIDTH="305" HEIGHT="50" BORDER="0" -->
+<!--  SRC="img33.gif" -->
+<!--  ALT="\begin{displaymath}\begin{array}{rrrrrrrrrrrrr} -->
+<!-- 1 &amp; 2 &amp; 3 &amp; 5 &amp; 6 &amp; 7 &amp; 4 &amp; 2 &amp; ... -->
+<!-- ... -->
+<!-- 2 &amp; 1 &amp; 3 &amp; 5 &amp; 6 &amp; 9 &amp; 4 &amp; 1 &amp; 1 &amp; 1 &amp; 7 &amp; 1 &amp; 4 -->
+<!-- \end{array}\end{displaymath}"> -->
+
+<!-- <BR CLEAR="ALL"> -->
+<P></P>
+o telepata obtém 11 pontos. 
+São atribuídos 9 pontos aos três primeiros acertos (nos números 3, 5 e 6 
+que se encontram na terceira, quarta e quinta posições) e
+2 pontos aos dois acertos isolados no número 4
+(na sétima e na décima terceira posições). 
+
+<P>
+
+<H2><A NAME="SECTION00041000000000000000">
+Tarefa</A>
+</H2>
+
+<P>
+Escreva um programa que, 
+dadas duas sequências de números inteiros,
+uma escrita pelo leigo e a outra pelo telepata,
+calcula o número total de acertos e a pontuação do telepata.
+
+<P>
+
+<H2><A NAME="SECTION00042000000000000000">
+Input</A>
+</H2>
+
+<P>
+A primeira linha tem um número inteiro, \(C\),
+ <!-- <IMG -->
+ <!-- WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0" -->
+ <!-- SRC="img23.gif" -->
+ <!-- ALT="$C$">, -->
+que é o comprimento das sequências.
+A segunda e a terceira linhas têm as sequências escritas 
+pelo leigo e pelo telepata, respetivamente.
+Cada uma dessas linhas é composta por \(C\) <!-- IMG -->
+ <!-- WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0" -->
+ <!-- SRC="img23.gif" -->
+ <!-- ALT="$C$"> --> números inteiros,
+\(n_1 \, n_2 \, \ldots \, n_C\),
+<!-- MATH
+ $n_1 \, n_2 \, \ldots \, n_C$
+ -->
+<!-- <IMG -->
+<!--  WIDTH="97" HEIGHT="31" ALIGN="MIDDLE" BORDER="0" -->
+<!--  SRC="img34.gif" -->
+<!--  ALT="$n_1 \, n_2 \, \ldots \, n_C$">, -->
+separados por um espaço.
+
+<P>
+
+<H2><A NAME="SECTION00043000000000000000">
+Restrições</A>
+</H2>
+
+<P>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT"><!-- MATH
+ $2 \leq C   \leq 30$
+ -->
+\(2\leq C   \leq 30\)
+<!-- <IMG -->
+<!--  WIDTH="91" HEIGHT="32" ALIGN="MIDDLE" BORDER="0" -->
+<!--  SRC="img35.gif" -->
+<!--  ALT="$2 \leq C \leq 30$"> --></TD>
+<TD ALIGN="LEFT">Comprimento das sequências 
+<P></P></TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT"><!-- MATH
+ $1 \leq n_i \leq 9$
+ -->
+\(1\leq n_i \leq 9\)
+<!-- <IMG -->
+<!--  WIDTH="84" HEIGHT="31" ALIGN="MIDDLE" BORDER="0" -->
+<!--  SRC="img36.gif" -->
+<!--  ALT="$1 \leq n_i \leq 9$" --></TD>
+<TD ALIGN="LEFT">Um número escrito pelo leigo ou pelo telepata 
+                       (para <!-- MATH
+ $i=1,2,\ldots,C$
+ -->
+\(i=1,2,\ldots,C\))
+<!-- <IMG -->
+<!--  WIDTH="111" HEIGHT="32" ALIGN="MIDDLE" BORDER="0" -->
+<!--  SRC="img37.gif" -->
+<!--  ALT="$i=1,2,\ldots,C$">) --></TD>
+</TR>
+</TABLE>
+
+<P>
+
+<H2><A NAME="SECTION00044000000000000000">
+Output</A>
+</H2>
+
+<P>
+A primeira linha tem o número total de acertos (isolados + consecutivos).
+
+<P>
+A segunda linha tem a pontuação do telepata.
+
+<P>
+
+
+<H2><A NAME="SECTION00045000000000000000">
+Exemplo 1</A>
+</H2> 
+<H3><A NAME="SECTION00045100000000000000">
+Input</A>
+</H3>
+<PRE>
+13
+1 2 3 5 6 7 4 2 3 6 3 3 4
+2 1 3 5 6 9 4 1 1 1 7 1 4
+</PRE> 
+
+<P>
+
+<H3><A NAME="SECTION00045200000000000000">
+Output</A>
+</H3>
+<PRE>
+5
+11
+</PRE> 
+
+<P>
+
+<H2><A NAME="SECTION00046000000000000000">
+Exemplo 2</A>
+</H2> 
+<H3><A NAME="SECTION00046100000000000000">
+Input</A>
+</H3>
+<PRE>
+13
+5 5 5 5 5 5 5 5 5 5 5 5 5
+5 1 2 3 4 5 6 7 8 9 1 1 5
+</PRE> 
+
+<P>
+
+<H3><A NAME="SECTION00046200000000000000">
+Output</A>
+</H3>
+<PRE>
+3
+3
+</PRE> 
+
+<H2><A NAME="SECTION00047000000000000000">
+Exemplo 3</A>
+</H2> 
+<H3><A NAME="SECTION00047100000000000000">
+Input</A>
+</H3>
+<PRE>
+9
+1 2 3 4 5 6 7 8 9
+9 1 2 3 4 5 6 7 8
+</PRE> 
+
+<P>
+
+<H3><A NAME="SECTION00047200000000000000">
+Output</A>
+</H3>
+<PRE>
+0
+0
+</PRE> 
+
+<P>
+
+<H2><A NAME="SECTION00048000000000000000">
+Exemplo 4</A>
+</H2> 
+<H3><A NAME="SECTION00048100000000000000">
+Input</A>
+</H3>
+<PRE>
+13
+4 4 6 9 1 8 8 2 4 3 5 8 7
+4 4 6 9 1 8 8 2 4 3 5 8 7
+</PRE> 
+
+<P>
+
+<H3><A NAME="SECTION00048200000000000000">
+Output</A>
+</H3>
+<PRE>
+13
+39
+</PRE> 
+
+<P>
+
+<P>
+<BR><HR>
+<ADDRESS>
+ToPAS'2018
+</ADDRESS>
+</BODY>
+</HTML>
