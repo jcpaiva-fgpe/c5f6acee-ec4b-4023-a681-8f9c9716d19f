@@ -1,0 +1,1 @@
+{"id":"7902799d-67d0-469a-b6a1-29f338b82b6c","name":"Rule Course","criteria":{"conditions":[{"order":0,"left_entity":"FIXED","left_property":"a","comparing_function":"LESS_THAN","right_entity":"ACTION","right_property":"b"}],"junctors":["AND"]},"actions":[{"type":"GIVE","parameters":["e673868b-18bc-4f41-a944-ed61c2a85d44","aaa"]}]}
