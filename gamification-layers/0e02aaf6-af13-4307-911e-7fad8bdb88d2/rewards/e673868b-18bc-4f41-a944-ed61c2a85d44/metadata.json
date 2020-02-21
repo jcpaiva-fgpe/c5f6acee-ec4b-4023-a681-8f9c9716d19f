@@ -1,0 +1,1 @@
+{"id":"e673868b-18bc-4f41-a944-ed61c2a85d44","name":"Badgy","description":"Badge Course","kind":"BADGE","amount":0,"revealables":[],"unlockables":[],"congratulations":[],"hints":[],"criteria":{"conditions":[{"order":0,"left_entity":"FIXED","left_property":"a","comparing_function":"GREATER_THAN","right_entity":"ACTION","right_property":"b"}],"junctors":["AND"]}}
