@@ -1,0 +1,341 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<HTML>
+<HEAD>
+<TITLE>Problema&nbsp;E: Jogo dos feijões</TITLE>
+<META NAME="description" CONTENT="Problem&nbsp;E: Jogo dos feijões">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2012">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<!--<script type="text/javascript" 
+       src="../mathjax/2.00/MathJax.js?config=TeX-AMS_CHTML">
+</script>-->
+
+</HEAD>
+
+<BODY >
+
+
+<H1><A NAME="SECTION00050000000000000000">
+Problema&nbsp;E: Jogo dos feijões</A>
+</H1>
+
+<P>
+<BR>
+
+
+
+<IMG
+ WIDTH="412" HEIGHT="403" BORDER="0"
+ SRC="feijoesFig.jpg"
+ ALT="imagem feijoesFig", align = right>
+
+
+<P>
+O Jogo dos Feijões é jogado por dois jogadores que retiram,
+alternadamente, 
+um montinho (completo) de feijões de uma das extremidades 
+de uma sequência de montinhos de feijões. 
+No início, há um número par de montinhos de feijões,
+cada um com uma quantidade diferente de feijões.
+O jogo acaba quando é retirado o último montinho de feijões e 
+o vencedor é o jogador que conseguiu acumular mais feijões 
+no decorrer do jogo.
+Se os dois jogadores tiverem retirado o mesmo número de feijões,
+há empate.
+
+<P>
+O Alex e a Bela usam estratégias diferentes.
+O Alex retira sempre o monte com mais feijões.
+A estratégia da Bela é mais elaborada:
+começa por retirar o monte com menos feijões;
+na sua segunda jogada, escolhe o monte com mais feijões;
+na sua terceira jogada, volta a retirar o monte com menos feijões; e
+assim sucessivamente, alternando entre o monte menor e o maior.
+O Alex é sempre o primeiro a jogar, porque é o mais novo.
+
+<P>
+Por exemplo, se a sequência inicial tiver seis montes, com 
+<B>6</B>, <B>2</B>, <B>3</B>, <B>1</B>, <B>12</B> e <B>5</B>
+feijões, por esta ordem,
+as jogadas do Alex e da Bela são as seguintes: 
+
+<OL>
+<LI>O Alex poderia retirar o monte com <B>6</B> feijões 
+      ou o monte com <B>5</B> feijões. 
+      Como ele escolhe sempre o monte maior,
+      retira o que tem <B>6</B> feijões.
+</LI>
+<LI>A Bela começa sempre a retirar o monte com menos feijões.
+      Sendo \(2 < 5\),<!-- <IMG -->
+ <!-- WIDTH="45" HEIGHT="31" ALIGN="MIDDLE" BORDER="0" -->
+ <!-- SRC="img39.gif" -->
+ <!-- ALT="$2&lt;5$"> --> retira o monte com <B>2</B> feijões.
+</LI>
+<LI>Depois, o Alex retira o monte com <B>5</B> feijões
+      (porque \(5>3\)).<!--  <IMG -->
+ <!-- WIDTH="45" HEIGHT="31" ALIGN="MIDDLE" BORDER="0" -->
+ <!-- SRC="img40.gif" -->
+ <!-- ALT="$5&gt;3$">). -->
+</LI>
+<LI>Na jogada seguinte, a Bela escolhe o monte maior, 
+      que tem <B>12</B> feijões.
+</LI>
+<LI>Quando já só há dois montes,
+      o Alex retira o que é composto por <B>3</B> feijões. 
+</LI>
+<LI>Por fim, a Bela retira o único monte que resta,
+      que tem apenas <B>1</B> feijão.
+</LI>
+</OL>
+Este jogo é ganho pela Bela, 
+que acumula 15 feijões 
+(<!-- MATH
+ $\textbf{2}+\textbf{12}+\textbf{1}$
+ -->
+\(\textbf{2}+\textbf{12}+\textbf{1}\)),
+<!-- <IMG -->
+<!--  WIDTH="87" HEIGHT="31" ALIGN="MIDDLE" BORDER="0" -->
+<!--  SRC="img41.gif" -->
+<!--  ALT="$\textbf{2}+\textbf{12}+\textbf{1}$">), -->
+dado que o Alex só arrecada&nbsp;14 feijões 
+(<!-- MATH
+ $\textbf{6}+\textbf{5}+\textbf{3}$
+ -->
+<!-- <IMG -->
+<!--  WIDTH="77" HEIGHT="31" ALIGN="MIDDLE" BORDER="0" -->
+<!--  SRC="img42.gif" -->
+<!--  ALT="$\textbf{6}+\textbf{5}+\textbf{3}$">). -->
+\(\textbf{6}+\textbf{5}+\textbf{3}\)).
+<P>
+
+<H2><A NAME="SECTION00051000000000000000">
+Tarefa</A>
+</H2>
+
+<P>
+Escreva um programa que,
+dada a sequência inicial de montes de feijões,
+calcula o número de feijões acumulados por cada jogador,
+indicando se há empate ou quem é o vencedor.
+
+<P>
+
+<H2><A NAME="SECTION00052000000000000000">
+Input</A>
+</H2>
+
+<P>
+A primeira linha tem um número inteiro par,  \(m\), 
+<!-- <IMG -->
+<!--  WIDTH="20" HEIGHT="18" ALIGN="BOTTOM" BORDER="0" -->
+<!--  SRC="img6.gif" -->
+<!--  ALT="$m$">,  --> que é o número de montes de feijões quando o jogo começa.
+A segunda linha é composta por \(m\) <!-- <IMG -->
+ <!-- WIDTH="20" HEIGHT="18" ALIGN="BOTTOM" BORDER="0" -->
+ <!-- SRC="img6.gif" -->
+ <!-- ALT="$m$"> --> números inteiros,
+<!-- MATH
+ $n_1 \, n_2 \, \ldots \, n_m$
+ -->
+\(n_1 \, n_2 \, \ldots \, n_m\),
+<!-- <IMG -->
+<!--  WIDTH="98" HEIGHT="31" ALIGN="MIDDLE" BORDER="0" -->
+<!--  SRC="img43.gif" -->
+<!--  ALT="$n_1   n_2   \ldots   n_m$">, -->
+que indicam quantos feijões existem em cada monte da sequência.
+Nunca há dois montes com a mesma quantidade de feijões.
+
+<P>
+
+<H2><A NAME="SECTION00053000000000000000">
+Restrições</A>
+</H2>
+
+<P>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT"><!-- MATH
+ $2 \leq m   \leq 100$
+ -->
+\(2 \leq m   \leq 100\)
+<!-- <IMG -->
+<!--  WIDTH="101" HEIGHT="31" ALIGN="MIDDLE" BORDER="0" -->
+<!--  SRC="img44.gif" -->
+<!--  ALT="$2 \leq m \leq 100$"> --></TD>
+<TD ALIGN="LEFT">Número de montes de feijões 
+<P></P></TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT"><!-- MATH
+ $1 \leq n_i \leq 200$
+ -->
+\(1 \leq n_i \leq 200\)
+<!-- <IMG -->
+<!--  WIDTH="101" HEIGHT="31" ALIGN="MIDDLE" BORDER="0" -->
+<!--  SRC="img45.gif" -->
+<!--  ALT="$1 \leq n_i \leq 200$"> --></TD>
+<TD ALIGN="LEFT">Número de feijões no monte \(i\) <!-- <IMG -->
+ <!-- WIDTH="10" HEIGHT="18" ALIGN="BOTTOM" BORDER="0" -->
+ <!-- SRC="img46.gif" -->
+ <!-- ALT="$i$">  -->
+                        (para <!-- MATH
+ $i=1,2,\ldots,m$
+ -->
+\(i=1,2,\ldots,m\)
+<!-- <IMG -->
+<!--  WIDTH="113" HEIGHT="33" ALIGN="MIDDLE" BORDER="0" -->
+<!--  SRC="img47.gif" -->
+<!--  ALT="$i=1,2,\ldots,m$">) -->)</TD>
+</TR>
+</TABLE>
+
+<P>
+
+<H2><A NAME="SECTION00054000000000000000">
+Output</A>
+</H2>
+
+<P>
+Uma única linha, cuja forma depende 
+dos números de feijões acumulados pelo Alex e pela Bela
+no fim do jogo, 
+denotados por \(A\) e \(B\), <!-- IMG -->
+ <!-- WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0" -->
+ <!-- SRC="img48.gif" -->
+ <!-- ALT="$A$"> e <IMG -->
+ <!-- WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0" -->
+ <!-- SRC="img49.gif" -->
+ <!-- ALT="$B$">, --> respetivamente. 
+A linha tem a forma:
+
+<UL>
+<LI><TT>Alex ganha com \(A\) <!-- <IMG -->
+ <!-- WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0" -->
+ <!-- SRC="img48.gif" -->
+ <!-- ALT="$A$"> --> contra \(B\), <!-- <IMG -->
+ <!-- WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0" -->
+ <!-- SRC="img49.gif" -->
+ <!-- ALT="$B$"> --></TT> se \(A > B\); <!-- <IMG -->
+ <!-- WIDTH="55" HEIGHT="32" ALIGN="MIDDLE" BORDER="0" -->
+ <!-- SRC="img50.gif" -->
+ <!-- ALT="$A&gt;B$">; -->
+</LI>
+<LI><TT>Bela ganha com \(B\)<!--  <IMG -->
+ <!-- WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0" -->
+ <!-- SRC="img49.gif" -->
+ <!-- ALT="$B$"> --> contra \(A\)<!-- <IMG -->
+ <!-- WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0" -->
+ <!-- SRC="img48.gif" -->
+ <!-- ALT="$A$"> --></TT>, se \(B>A\); <!-- <IMG -->
+ <!-- WIDTH="55" HEIGHT="32" ALIGN="MIDDLE" BORDER="0" -->
+ <!-- SRC="img51.gif" -->
+ <!-- ALT="$B&gt;A$">; -->
+</LI>
+<LI><TT>Alex e Bela empatam a \(A\)<!-- <IMG -->
+ <!-- WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0" -->
+ <!-- SRC="img48.gif" -->
+ <!-- ALT="$A$"> --></TT>, se \(A=B\). <!-- <IMG -->
+ <!-- WIDTH="55" HEIGHT="15" ALIGN="BOTTOM" BORDER="0" -->
+ <!-- SRC="img52.gif" -->
+ <!-- ALT="$A=B$">. -->
+</LI>
+</UL>
+
+<P>
+
+
+<H2><A NAME="SECTION00055000000000000000">
+Exemplo 1</A>
+</H2> 
+<H3><A NAME="SECTION00055100000000000000">
+Input</A>
+</H3>
+<PRE>
+6
+6 2 3 1 12 5
+</PRE> 
+
+<P>
+
+<H3><A NAME="SECTION00055200000000000000">
+Output</A>
+</H3>
+<PRE>
+Bela ganha com 15 contra 14
+</PRE> 
+
+<P>
+
+<H2><A NAME="SECTION00056000000000000000">
+Exemplo 2</A>
+</H2> 
+<H3><A NAME="SECTION00056100000000000000">
+Input</A>
+</H3>
+<PRE>
+8
+6 5 16 17 7 18 10 1
+</PRE> 
+
+<P>
+
+<H3><A NAME="SECTION00056200000000000000">
+Output</A>
+</H3>
+<PRE>
+Alex e Bela empatam a 40
+</PRE> 
+
+<H2><A NAME="SECTION00057000000000000000">
+Exemplo 3</A>
+</H2> 
+<H3><A NAME="SECTION00057100000000000000">
+Input</A>
+</H3>
+<PRE>
+2
+2 5
+</PRE> 
+
+<P>
+
+<H3><A NAME="SECTION00057200000000000000">
+Output</A>
+</H3>
+<PRE>
+Alex ganha com 5 contra 2
+</PRE> 
+
+<P>
+
+<H2><A NAME="SECTION00058000000000000000">
+Exemplo 4</A>
+</H2> 
+<H3><A NAME="SECTION00058100000000000000">
+Input</A>
+</H3>
+<PRE>
+10
+1 3 6 8 10 12 4 9 5 2
+</PRE> 
+
+<P>
+
+<H3><A NAME="SECTION00058200000000000000">
+Output</A>
+</H3>
+<PRE>
+Alex ganha com 31 contra 29
+</PRE> 
+
+<P>
+
+<P>
+<BR><HR>
+<ADDRESS>
+ToPAS'2018
+</ADDRESS>
+</BODY>
+</HTML>
